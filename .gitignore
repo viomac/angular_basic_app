@@ -1,2 +1,7 @@
 #Ignore node modules
-/node_modules
+node_modules
+
+
+#Ignoring compiled files .js and js.map (js.map is used during debugging)
+app/*.js
+app/*.js.map
