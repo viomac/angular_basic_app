@@ -8,9 +8,7 @@ import {AuthorsComponent} from './authors.component'
         <h1>{{ title }}</h1>
         <courses></courses>
         <authors></authors>
-        <img src="{{ imageUrl }}" />
         <img [src] = "imageUrl" />
-        <img bind-src = "imageUrl" />
     `,
     directives: [CoursesComponent, AuthorsComponent]
 })
