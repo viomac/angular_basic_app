@@ -11,7 +11,11 @@ import {AuthorsComponent} from './authors.component'
         <img [src] = "imageUrl" />
         <br>
         <br>
-        <button class="btn btn-primary" [class.active]="isActive">TEST</button>
+        <button
+            class="btn btn-primary"
+            [class.active]="isActive"
+            [style.backgroundColor]=" isActive ? 'blue' : 'gray'"
+        >TEST</button>
     `,
     directives: [CoursesComponent, AuthorsComponent]
 })
