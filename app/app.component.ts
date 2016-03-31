@@ -9,6 +9,9 @@ import {AuthorsComponent} from './authors.component'
         <courses></courses>
         <authors></authors>
         <img [src] = "imageUrl" />
+        <br>
+        <br>
+        <button class="btn btn-primary" [class.active]="isActive">TEST</button>
     `,
     directives: [CoursesComponent, AuthorsComponent]
 })
@@ -16,4 +19,5 @@ import {AuthorsComponent} from './authors.component'
 export class AppComponent {
     title = "My First Angular 2 App";
     imageUrl = "http://lorempixel.com/400/200/";
+    isActive = true;
 }
