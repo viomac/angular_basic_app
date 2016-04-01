@@ -22,6 +22,16 @@ import {AuthorsComponent} from './authors.component'
             <button (click) = "onClick($event)">Submit</button>
             <button on-click = "onClick($event)">Submit</button>
         </div>
+        <br>
+        <br>
+        <input
+            type="text"
+            [value]="inputContent"
+            (input)="inputContent = $event.target.value"
+        /><br>
+        <input type="text" [(ngModel)]="inputContent" /><br>
+        <input type="text" bindon-ngModel="inputContent" /><br>           <input type="button" (click)="inputContent = '' " value="Clear" />
+        Preview: {{ inputContent }}
     `,
     directives: [CoursesComponent, AuthorsComponent]
 })
@@ -30,6 +40,7 @@ export class AppComponent {
     title = "My First Angular 2 App";
     imageUrl = "http://lorempixel.com/400/200/";
     isActive = true;
+    inputContent = "Test two way binding";
 
     onClick($event) {
         $event.stopPropagation();
