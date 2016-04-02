@@ -1,6 +1,7 @@
 import {Component} from 'angular2/core';
 import {CoursesComponent} from './courses.component'
 import {AuthorsComponent} from './authors.component'
+import {FavoriteComponent} from './favorite.component'
 
 @Component({
     selector: 'my-app',
@@ -18,22 +19,35 @@ import {AuthorsComponent} from './authors.component'
         >TEST</button>
         <br>
         <br>
+        
+        
         <div (click) = "onDivClick()">
             <button (click) = "onClick($event)">Submit</button>
             <button on-click = "onClick($event)">Submit</button>
         </div>
         <br>
         <br>
+        
+        
         <input
             type="text"
             [value]="inputContent"
             (input)="inputContent = $event.target.value"
         /><br>
         <input type="text" [(ngModel)]="inputContent" /><br>
-        <input type="text" bindon-ngModel="inputContent" /><br>           <input type="button" (click)="inputContent = '' " value="Clear" />
+        <input type="text" bindon-ngModel="inputContent" /><br>       
+        <input type="button" (click)="inputContent = '' " value="Clear" />
         Preview: {{ inputContent }}
+        <br>
+        <br>
+        
+        
+        <favorite></favorite>
+        <br>
+        <br>
+        
     `,
-    directives: [CoursesComponent, AuthorsComponent]
+    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent]
 })
 
 export class AppComponent {
