@@ -38,13 +38,9 @@ import {FavoriteComponent} from './favorite.component'
         <input type="text" bindon-ngModel="inputContent" /><br>       
         <input type="button" (click)="inputContent = '' " value="Clear" />
         Preview: {{ inputContent }}
-        <br>
-        <br>
         
         
-        <favorite></favorite>
-        <br>
-        <br>
+        <favorite [is-favorite]="post.isFavorite" (changeOwn)="onFavoriteChange($event)"></favorite>
         
     `,
     directives: [CoursesComponent, AuthorsComponent, FavoriteComponent]
@@ -63,5 +59,14 @@ export class AppComponent {
 
     onDivClick() {
         console.log("Handle by Div.");
+    }
+
+    post = {
+        title: "Title",
+        isFavorite: true
+    }
+
+    onFavoriteChange($event) {
+        console.log($event);
     }
 }
