@@ -39,7 +39,8 @@ import {FavoriteComponent} from './favorite.component'
         <input type="button" (click)="inputContent = '' " value="Clear" />
         Preview: {{ inputContent }}
         
-        
+        <br><br>
+        <i class="glyphicon glyphicon-star"></i>
         <favorite [is-favorite]="post.isFavorite" (changeOwn)="onFavoriteChange($event)"></favorite>
         
     `,
