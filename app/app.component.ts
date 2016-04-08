@@ -3,6 +3,7 @@ import {CoursesComponent} from './courses.component'
 import {AuthorsComponent} from './authors.component'
 import {FavoriteComponent} from './favorite.component'
 import {LikeComponent} from './like.component'
+import {VoterComponent} from './voter.component'
 
 @Component({
     selector: 'my-app',
@@ -44,9 +45,16 @@ import {LikeComponent} from './like.component'
         <i class="glyphicon glyphicon-star"></i>
         <favorite [is-favorite]="post.isFavorite" (changeOwn)="onFavoriteChange($event)"></favorite>
         
-    <like [current-likes]="tweet.currentLikes" [i-like]="tweet.iLike"></like>
+        <like [current-likes]="tweet.currentLikes" [i-like]="tweet.iLike"></like>
+
+        <voter
+            [vote-count]="voter.voteCount"
+            [my-vote]="voter.myVote"
+            (vote)="onVote($event)"
+        ></voter>
+
     `,
-    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent, LikeComponent]
+    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent, LikeComponent, VoterComponent]
 })
 
 export class AppComponent {
@@ -54,15 +62,6 @@ export class AppComponent {
     imageUrl = "http://lorempixel.com/400/200/";
     isActive = true;
     inputContent = "Test two way binding";
-
-    onClick($event) {
-        $event.stopPropagation();
-        console.log("Clicked", $event);
-    }
-
-    onDivClick() {
-        console.log("Handle by Div.");
-    }
 
     post = {
         title: "Title",
@@ -77,4 +76,25 @@ export class AppComponent {
         currentLikes: 8,
         iLike: true
     }
+
+    voter = {
+        voteCount: 19,
+        myVote: -1
+    }
+
+    onClick($event) {
+        $event.stopPropagation();
+        console.log("Clicked", $event);
+    }
+
+    onDivClick() {
+        console.log("Handle by Div.");
+    }
+
+    onVote($event) {
+        console.log("Status :",$event);
+        this.voter.myVote = $event.finalVote;
+        console.log("Updated status to:",this.voter.myVote);
+    }
+
 }
