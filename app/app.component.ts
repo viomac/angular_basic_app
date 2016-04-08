@@ -2,6 +2,7 @@ import {Component} from 'angular2/core';
 import {CoursesComponent} from './courses.component'
 import {AuthorsComponent} from './authors.component'
 import {FavoriteComponent} from './favorite.component'
+import {LikeComponent} from './like.component'
 
 @Component({
     selector: 'my-app',
@@ -43,8 +44,9 @@ import {FavoriteComponent} from './favorite.component'
         <i class="glyphicon glyphicon-star"></i>
         <favorite [is-favorite]="post.isFavorite" (changeOwn)="onFavoriteChange($event)"></favorite>
         
+        <like [current-likes]="post.likes"></like>
     `,
-    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent]
+    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent, LikeComponent]
 })
 
 export class AppComponent {
@@ -64,7 +66,8 @@ export class AppComponent {
 
     post = {
         title: "Title",
-        isFavorite: true
+        isFavorite: true,
+        likes: 8
     }
 
     onFavoriteChange($event) {
