@@ -6,12 +6,12 @@ import {Component, Input, Output, EventEmitter} from 'angular2/core'
     <br><br>
     <div class="vertical-voter">
         <i class="glyphicon glyphicon-menu-up"
-           [class.highlighted]=" myVote==1 ? true : false"
+           [class.highlighted]=" myVote == 1"
            (click)="onUpClick()">
         </i>
-        <span>{{ voteCount }}</span>
+        <span>{{ voteCount + myVote }}</span>
         <i class="glyphicon glyphicon-menu-down"
-           [class.highlighted]=" myVote==-1 ? true : false"
+           [class.highlighted]=" myVote == -1"
            (click)="onDownClick()">
         </i>
     <div>
@@ -34,17 +34,18 @@ export class VoterComponent {
     @Output() vote = new EventEmitter();
     
     onUpClick() {
-        if(this.myVote < 1) {
-            this.voteCount++;
-            this.myVote++;
-        }
+        if(this.myVote == 1)
+            return;
+
+        this.myVote++;
         this.vote.emit({ finalVote: this.myVote});
     }
+
     onDownClick() {
-        if(this.myVote >-1) {
-            this.voteCount--;
-            this.myVote--;
-        }
+        if(this.myVote == -1)
+            return;
+
+        this.myVote--;
         this.vote.emit({ finalVote: this.myVote});
     }
     
