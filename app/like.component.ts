@@ -6,22 +6,32 @@ import {Component, Input} from 'angular2/core'
         <br><br>
         <i 
             class="glyphicon glyphicon-heart"
-            [style.color]="like ? 'deeppink' : '#ccc'"
+            [class.highlighted]="iLike"
             (click)="onClick()">
         </i>
-        {{ currentLikes }}
-    `
+        <span>{{ currentLikes }}</span>
+    `,
+    styles: [`
+        .glyphicon-heart {
+            color: #ccc;
+            cursor: pointer;
+        }
+
+        .highlighted {
+            color: deeppink;
+        }
+        
+    `]
 })
 
 export class LikeComponent {
     @Input('current-likes') currentLikes = 0;
-    like = false;
+    @Input('i-like') iLike = false;
     
     onClick() {
-        this.like = !this.like;
-        this.like ? 
-            this.currentLikes++ : 
-            this.currentLikes--;
+        this.iLike = !this.iLike;
+        //this.iLike ? this.currentLikes++ : this.currentLikes--;
+        this.currentLikes += this.iLike ? 1 : -1;
     }
     
 }

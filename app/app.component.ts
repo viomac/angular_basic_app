@@ -44,7 +44,7 @@ import {LikeComponent} from './like.component'
         <i class="glyphicon glyphicon-star"></i>
         <favorite [is-favorite]="post.isFavorite" (changeOwn)="onFavoriteChange($event)"></favorite>
         
-        <like [current-likes]="post.likes"></like>
+    <like [current-likes]="tweet.currentLikes" [i-like]="tweet.iLike"></like>
     `,
     directives: [CoursesComponent, AuthorsComponent, FavoriteComponent, LikeComponent]
 })
@@ -66,11 +66,15 @@ export class AppComponent {
 
     post = {
         title: "Title",
-        isFavorite: true,
-        likes: 8
+        isFavorite: true
     }
 
     onFavoriteChange($event) {
         console.log($event);
+    }
+
+    tweet = {
+        currentLikes: 8,
+        iLike: true
     }
 }
