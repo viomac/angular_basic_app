@@ -3,7 +3,6 @@ import {Component, Input} from 'angular2/core'
 @Component ({
     selector: 'like',
     template: `
-        <br><br>
         <i 
             class="glyphicon glyphicon-heart"
             [class.highlighted]="iLike"
@@ -20,7 +19,6 @@ import {Component, Input} from 'angular2/core'
         .highlighted {
             color: deeppink;
         }
-        
     `]
 })
 
