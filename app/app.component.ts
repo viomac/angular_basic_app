@@ -6,6 +6,7 @@ import {LikeComponent} from './like.component'
 import {VoterComponent} from './voter.component'
 import {TweetComponent} from './tweet.component'
 import {TweetsComponent} from './tweets.component'
+import {ControlRenderComponent} from './control.render.component'
 
 @Component({
     selector: 'my-app',
@@ -57,8 +58,10 @@ import {TweetsComponent} from './tweets.component'
 
         <tweets></tweets>
 
+        <control-render></control-render>
+
     `,
-    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent, LikeComponent, VoterComponent, TweetComponent, TweetsComponent]
+    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent, LikeComponent, VoterComponent, TweetComponent, TweetsComponent, ControlRenderComponent]
 })
 
 export class AppComponent {
