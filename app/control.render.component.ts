@@ -33,10 +33,19 @@ import {Component} from 'angular2/core'
         <template [ngSwitchWhen]="'map'" ngSwitchDefault>Map View Content</template>
         <template [ngSwitchWhen]="'list'">List View Content</template>
     </div>
+
+<h2>Controlling Rendering of HTML - ngFor</h2>
+    <ul>
+        <li *ngFor="#course of coursesFor, #i = index">
+            {{ i + 1 }} - {{ course }}
+        </li>
+    </ul>
+
     `
 })
 
 export class ControlRenderComponent {
     courses = [];
     viewMode = 'map';
+    coursesFor = ['course1','course2','course3'];
 }
