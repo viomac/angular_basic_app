@@ -9,22 +9,22 @@ export class TweetService {
             user: '@windwardstudios',
             comment: 'Looking for a better company reporting or docgen app?',
             likes: 0,
-            myVote: 0,
-            image: 'http://lorempixel.com/100/100/people/10'
+            iLike: 0,
+            image: 'http://lorempixel.com/100/100/people?1'
         },{ 
             name : 'AngularJS News',
             user: '@angularjs_news',
             comment: 'Right Relevance: Influencers, Articles and Conversations',
             likes: 5,
-            myVote: 1,
-            image: 'http://lorempixel.com/100/100/people/7'
+            iLike: 1,
+            image: 'http://lorempixel.com/100/100/people?2'
         },{ 
             name : 'UX & Bootstrap',
             user: '@3rdwave',
             comment: '10 Reasons Why Web Projects Fail',
             likes: 1,
-            myVote: 1,
-            image: 'http://lorempixel.com/100/100/people/9'
+            iLike: 1,
+            image: 'http://lorempixel.com/100/100/people?3'
         }
     ];
 }

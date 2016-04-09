@@ -1,25 +1,23 @@
-import {Component} from 'angular2/core'
+import {Component, Input} from 'angular2/core'
 import {LikeComponent} from './like.component'
-import {TweetService} from './tweet.service'
 
 @Component ({
     selector: 'tweet',
     template: `
-        <h1>Tweets</h1>
-        <div class="media" *ngFor='#tweet of tweets'>
+        <div class="media">
             <div class="media-left">
                 <a href="#">
-<img class="media-object img-rounded" src="{{tweet.image}}" alt="...">
+<img class="media-object img-rounded" src="{{ tweetContent.image }}" alt="...">
                 </a>
             </div>
             <div class="media-body">
                 <h4 class="media-heading">
-                    <strong>{{ tweet.name }} </strong>
-                    <small><strong>{{ tweet.user }}</strong></small>
+                    <strong>{{ tweetContent.name }} </strong>
+                    <small><strong>{{ tweetContent.user }}</strong></small>
                 </h4>
-                <p>{{ tweet.comment }}</p>
+                <p>{{ tweetContent.comment }}</p>
                 <div >
-                <like [current-likes]="tweet.likes" [i-like]="tweet.myVote"></like>
+                <like [current-likes]="tweetContent.likes" [i-like]="tweetContent.iLike"></like>
                 </div>
             </div>
         </div>
@@ -32,16 +30,18 @@ import {TweetService} from './tweet.service'
         #tweet-comp {
             height: 20px;
         }
+        .media {
+            margin-bottom: 20px;
+        }
     `],
-    directives: [LikeComponent],
-    providers: [TweetService]
+    directives: [LikeComponent]
 })
 
 
 export class TweetComponent {
-    tweets;
-    
-    constructor(tweetService: TweetService) {
-        this.tweets = tweetService.getTweets();
+    @Input('tweet-content') tweetContent;
+     
+    constructor() { //No muestra nada en la consola
+        console.log(this.tweetContent);
     }
 }
