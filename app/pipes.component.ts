@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core'
+import {SummaryPipe} from './summary.pipe'
 
 @Component ({
     selector: 'pipes',
@@ -16,7 +17,12 @@ import {Component} from 'angular2/core'
     <br/>
     {{ course | json }}
 
-    `
+    <h2>Custom Pipes</h2>
+    {{ post.title }}
+    <br/>
+    {{ post.body | summary:10 }}
+    `,
+    pipes: [SummaryPipe]
 })
 
 export class PipesComponent {
@@ -26,5 +32,12 @@ export class PipesComponent {
         students: 5981,
         price: 99.95,
         releaseDate: new Date(2016, 3, 1)
+    }
+
+    post = {
+        title: "Angular Tutorial for Beginners",
+        body:`
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum molestie pretium massa, at pharetra nibh blandit nec. Nunc orci arcu, pulvinar ut velit et, molestie congue erat.
+        `
     }
 }
