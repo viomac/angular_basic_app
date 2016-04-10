@@ -8,6 +8,7 @@ import {TweetComponent} from './tweet.component'
 import {TweetsComponent} from './tweets.component'
 import {ControlRenderComponent} from './control.render.component'
 import {PipesComponent} from './pipes.component'
+import {BootstrapPanel} from './bootstrap.panel.component'
 
 @Component({
     selector: 'my-app',
@@ -61,10 +62,16 @@ import {PipesComponent} from './pipes.component'
 
         <control-render></control-render>
 
+        <bs-panel>
+            <div class="heading">The heading</div>
+            <div class="body">This is the body!</div>
+            <div class="body">This is another body!</div>
+        </bs-panel>
+
         <pipes></pipes>
 
     `,
-    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent, LikeComponent, VoterComponent, TweetComponent, TweetsComponent, ControlRenderComponent, PipesComponent]
+    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent, LikeComponent, VoterComponent, TweetComponent, TweetsComponent, ControlRenderComponent, PipesComponent, BootstrapPanel]
 })
 
 export class AppComponent {
