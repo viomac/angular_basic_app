@@ -40,6 +40,11 @@ import {Component} from 'angular2/core'
             {{ i + 1 }} - {{ course }}
         </li>
     </ul>
+    <ul>
+        <template ngFor [ngForOf]="coursesFor" #course #i=index>
+            <li>{{ i + 1 }} - {{ course }}</li>
+        </template>
+    </ul>
 
     `
 })
