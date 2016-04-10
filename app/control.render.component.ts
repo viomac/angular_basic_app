@@ -46,6 +46,19 @@ import {Component} from 'angular2/core'
         </template>
     </ul>
 
+<h2>Controlling Rendering of HTML - ngStyle</h2>
+    <button
+        [style.backgroundColor]="canSave ? 'blue' : 'gray'"
+        [style.color]="canSave ? 'white' : 'black'"
+        [style.fontWeight]="canSave ? 'bold' : 'normal'"
+    >Submit</button>
+    <button
+        [ngStyle]="{
+            backgroundColor: canSave ? 'blue' : 'gray',
+            color: canSave ? 'white' : 'black',
+            fontWeight: canSave ? 'bold' : 'normal'
+        }"
+    >Submit</button>
     `
 })
 
@@ -53,4 +66,5 @@ export class ControlRenderComponent {
     courses = [];
     viewMode = 'map';
     coursesFor = ['course1','course2','course3'];
+    canSave = true;
 }
