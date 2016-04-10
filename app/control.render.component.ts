@@ -59,6 +59,17 @@ import {Component} from 'angular2/core'
             fontWeight: canSave ? 'bold' : 'normal'
         }"
     >Submit</button>
+    
+<h2>Controlling Rendering of HTML - Elvis Operator</h2>
+    <ul>
+        <li>Title: {{ task.title }}</li>
+        <li>Assigned to: {{
+            task.assignee != null ?
+            task.assignee.name : ""
+            }}
+        </li>
+        <li>Assigned to:{{ task.assignee?.name }}</li>
+    </ul>
     `
 })
 
@@ -67,4 +78,8 @@ export class ControlRenderComponent {
     viewMode = 'map';
     coursesFor = ['course1','course2','course3'];
     canSave = true;
+    task = {
+        title: "Review applications",
+        assignee: null
+    };
 }
