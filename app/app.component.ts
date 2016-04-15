@@ -9,6 +9,7 @@ import {TweetsComponent} from './tweets.component'
 import {ControlRenderComponent} from './control.render.component'
 import {PipesComponent} from './pipes.component'
 import {BootstrapPanel} from './bootstrap.panel.component'
+import {ZippyComponent} from './zippy.component'
 
 @Component({
     selector: 'my-app',
@@ -70,8 +71,15 @@ import {BootstrapPanel} from './bootstrap.panel.component'
 
         <pipes></pipes>
 
+        <zippy [title]="'Who can see my stuff?'">
+            <div class="body">Content of who can see my stuff</div>
+        </zippy>
+        <zippy [title]="'Who can contact me?'">
+            <div class="body">Content of who can contact me</div>
+        </zippy>
+
     `,
-    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent, LikeComponent, VoterComponent, TweetComponent, TweetsComponent, ControlRenderComponent, PipesComponent, BootstrapPanel]
+    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent, LikeComponent, VoterComponent, TweetComponent, TweetsComponent, ControlRenderComponent, PipesComponent, BootstrapPanel, ZippyComponent]
 })
 
 export class AppComponent {
