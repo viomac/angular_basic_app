@@ -4,7 +4,7 @@ import {Component, Input} from 'angular2/core'
     selector: 'zippy',
     template: `
 <div class="panel panel-default">
-    <div class="panel-heading" (click)="onClick()">
+    <div class="panel-heading" (click)="toggle()">
         <div class="title">{{ title }}
             <span
                 class="glyphicon pull-right"
@@ -29,7 +29,7 @@ export class ZippyComponent {
     isCollapsed = false;
     @Input() title = '';
     
-    onClick(){
+    toggle(){
         this.isCollapsed = !this.isCollapsed;   
     }
 }
