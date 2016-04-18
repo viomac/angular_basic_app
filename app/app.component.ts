@@ -11,11 +11,12 @@ import {PipesComponent} from './pipes.component'
 import {BootstrapPanel} from './bootstrap.panel.component'
 import {ZippyComponent} from './zippy.component'
 import {ContactFormComponent} from './contact-form.component'
+import {SubscribeFormComponent} from './subscribe-form.component'
 
 @Component({
     selector: 'my-app',
     template: `
-
+        <subscribe-form></subscribe-form>
         <contact-form></contact-form>
 
         <h1>{{ title }}</h1>
@@ -83,7 +84,7 @@ import {ContactFormComponent} from './contact-form.component'
         </zippy>
 
     `,
-    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent, LikeComponent, VoterComponent, TweetComponent, TweetsComponent, ControlRenderComponent, PipesComponent, BootstrapPanel, ZippyComponent, ContactFormComponent]
+    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent, LikeComponent, VoterComponent, TweetComponent, TweetsComponent, ControlRenderComponent, PipesComponent, BootstrapPanel, ZippyComponent, ContactFormComponent, SubscribeFormComponent]
 })
 
 export class AppComponent {
