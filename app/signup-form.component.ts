@@ -15,7 +15,7 @@ export class SignUpFormComponent {
             username: ['', Validators.compose([
                 Validators.required,
                 UsernameValidators.cannotContainSpace
-            ])],
+            ]), UsernameValidators.shouldBeUnique],
             password: ['', Validators.required]
         });
     }
