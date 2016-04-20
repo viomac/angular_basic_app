@@ -13,10 +13,12 @@ import {ZippyComponent} from './zippy.component'
 import {ContactFormComponent} from './contact-form.component'
 import {SubscribeFormComponent} from './subscribe-form.component'
 import {SignUpFormComponent} from './signup-form.component'
+import {ChangePasswordFormComponent} from './change-password-form.component'
 
 @Component({
     selector: 'my-app',
     template: `
+        <change-password-form></change-password-form>
         <signup-form></signup-form>
         <subscribe-form></subscribe-form>
         <contact-form></contact-form>
@@ -86,7 +88,7 @@ import {SignUpFormComponent} from './signup-form.component'
         </zippy>
 
     `,
-    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent, LikeComponent, VoterComponent, TweetComponent, TweetsComponent, ControlRenderComponent, PipesComponent, BootstrapPanel, ZippyComponent, ContactFormComponent, SubscribeFormComponent, SignUpFormComponent]
+    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent, LikeComponent, VoterComponent, TweetComponent, TweetsComponent, ControlRenderComponent, PipesComponent, BootstrapPanel, ZippyComponent, ContactFormComponent, SubscribeFormComponent, SignUpFormComponent, ChangePasswordFormComponent]
 })
 
 export class AppComponent {
