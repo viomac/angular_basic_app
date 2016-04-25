@@ -1,3 +1,5 @@
+/// <reference path="../typings/tsd.d.ts" />
+
 import {Component} from 'angular2/core';
 import {CoursesComponent} from './courses.component'
 import {AuthorsComponent} from './authors.component'
@@ -13,10 +15,13 @@ import {ZippyComponent} from './zippy.component'
 import {ContactFormComponent} from './contact-form.component'
 import {SubscribeFormComponent} from './subscribe-form.component'
 import {SignUpFormComponent} from './signup-form.component'
+import {SearchBarComponent} from './search-bar.component'
 
 @Component({
     selector: 'my-app',
     template: `
+        <search-bar></search-bar>
+
         <signup-form></signup-form>
         <subscribe-form></subscribe-form>
         <contact-form></contact-form>
@@ -86,7 +91,7 @@ import {SignUpFormComponent} from './signup-form.component'
         </zippy>
 
     `,
-    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent, LikeComponent, VoterComponent, TweetComponent, TweetsComponent, ControlRenderComponent, PipesComponent, BootstrapPanel, ZippyComponent, ContactFormComponent, SubscribeFormComponent, SignUpFormComponent]
+    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent, LikeComponent, VoterComponent, TweetComponent, TweetsComponent, ControlRenderComponent, PipesComponent, BootstrapPanel, ZippyComponent, ContactFormComponent, SubscribeFormComponent, SignUpFormComponent, SearchBarComponent]
 })
 
 export class AppComponent {
