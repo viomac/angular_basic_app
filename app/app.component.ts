@@ -13,10 +13,13 @@ import {ZippyComponent} from './zippy.component'
 import {ContactFormComponent} from './contact-form.component'
 import {SubscribeFormComponent} from './subscribe-form.component'
 import {SignUpFormComponent} from './signup-form.component'
+import {RestfulApiComponent} from './restful_api/restful-api.component'
 
 @Component({
     selector: 'my-app',
     template: `
+
+        <restful-api></restful-api>
         <signup-form></signup-form>
         <subscribe-form></subscribe-form>
         <contact-form></contact-form>
@@ -86,7 +89,7 @@ import {SignUpFormComponent} from './signup-form.component'
         </zippy>
 
     `,
-    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent, LikeComponent, VoterComponent, TweetComponent, TweetsComponent, ControlRenderComponent, PipesComponent, BootstrapPanel, ZippyComponent, ContactFormComponent, SubscribeFormComponent, SignUpFormComponent]
+    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent, LikeComponent, VoterComponent, TweetComponent, TweetsComponent, ControlRenderComponent, PipesComponent, BootstrapPanel, ZippyComponent, ContactFormComponent, SubscribeFormComponent, SignUpFormComponent, RestfulApiComponent]
 })
 
 export class AppComponent {
